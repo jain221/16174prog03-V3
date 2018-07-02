@@ -1,0 +1,66 @@
+Software Release Notes for 16174prog03 V2.0.2
+=============================================
+:Date:   03/10/2017
+:Author: Derek Russell <derek.russell@digitrol.com>
+
+::
+
+    Contract: 16868
+    GitTag: C16174PROG03-V2.0.2
+
+
+Overview
+--------
+
+The 16174prog03 is the firmware for the microcontroller on the ALC Gateway.
+
+
+Changes from previous version
+-----------------------------
+
+- Getting timestamp from Cloud Server.
+- Improved detection of dropped TCP connection to Cloud Server.
+  - Stopped using counter to record failed sending of data and now reading size
+    of transmit buffer from Modem.
+  - Don't attempt to send data if TCP link has been closed.
+
+
+Tools
+-----
+
+Compiler, linker, libraries etc:
+
+- GCC ARM Compiler (v5.3 2016q1)
+- Eclipse - IDE
+- Git - version control
+- PC-Lint
+- Python (v3.4 or later)
+
+
+Source Control Management
+-------------------------
+
+All the project files are under source control management using Git.
+The repository is located at::
+
+    T:\repos\software\projects\16xxx\16174prog03.git
+
+
+Issue Tracking
+--------------
+
+Issues are tracked using issue tracker. The URL is http://engineering-2/mantis/
+
+
+User package
+------------
+
+A list of files and packages supplied to the customer::
+
+    03/10/2017  13:52            201,128 16174prog03-V2.0.2.bin
+
+Checksum: ``0x013C4EB1``
+
+Released to customer - V2.0.2 on 03/10/2017
+
+    Release Authorized by: ________________________________

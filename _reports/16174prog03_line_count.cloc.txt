@@ -1,0 +1,69 @@
+http://cloc.sourceforge.net v 1.56  T=47.0 s (1.1 files/s, 240.9 lines/s)
+--------------------------------------------------------------------------------------------------------------------------
+File                                                                                   blank        comment           code
+--------------------------------------------------------------------------------------------------------------------------
+..\source\src\modem\modem_drv_sim808.c                                                   256            155            933
+..\source\src\net\data_upload_client.c                                                   158            172            525
+..\source\src\modem\modem_ctrl.c                                                         122             79            390
+..\source\tests\sensor_node_list\sensor_node_list_test.cpp                               123             80            287
+..\source\src\storage\nv_settings.c                                                       96             69            275
+..\source\src\databuffers\sensor_data_list.c                                              94             86            262
+..\source\src\gps\gps_time_ctrl.c                                                         81             94            250
+..\source\src\databuffers\sensor_node.c                                                   85             99            221
+..\source\src\databuffers\sensor_node_list.c                                              83             88            203
+..\source\src\bt\external_ble_interface.c                                                 55             97            193
+..\source\src\gps\ntp_time_ctrl.c                                                         84             92            189
+..\source\tests\sensor_data_list\sensor_data_list__insert_test.cpp                        60             41            171
+..\source\tests\sensor_data_pool\sensor_data_pool_test.cpp                                47             29            127
+..\source\tests\sensor_node_pool\sensor_node_pool_test.cpp                                45             35            120
+..\source\tests\sensor_data_list\sensor_data_list__max_pop_len_test.cpp                   36             36            111
+..\source\src\rpl_border_router.c                                                         66             61            111
+..\source\src\net\data_upload_msg.c                                                       64             59            108
+..\source\tests\sensor_node\sensor_node_test.cpp                                          39             41             99
+..\source\src\databuffers\sensor_data_pool.c                                              64             70             97
+..\source\src\shell\16174prog03_shell_nodes.c                                             59             44             71
+..\source\inc\modem\modem_drv.h                                                           65             33             66
+..\source\src\shell\16174prog03_shell_factory.c                                           55             43             65
+..\source\src\gps\server_time_ctrl.c                                                      59             53             59
+..\source\tests\data_upload_msg\data_upload_msg_test.cpp                                  42             33             56
+..\source\inc\databuffers\sensor_node.h                                                   51             32             54
+..\source\src\16174prog03.c                                                               10             15             50
+..\source\src\gps\gps_data.c                                                              56             48             46
+..\source\src\databuffers\sensor_node_pool.c                                              50             42             40
+..\source\tests\alc_rtcc_arch\alc_rtcc_arch_util_test.cpp                                 16             25             38
+..\source\inc\project-conf.h                                                              62             39             36
+..\source\inc\gps\gps_data.h                                                              47             31             29
+..\source\inc\storage\nv_settings.h                                                       47             31             28
+..\source\inc\databuffers\sensor_data.h                                                   42             31             27
+..\source\inc\net\data_upload_client_conf.h                                               55             38             27
+..\source\inc\modem\modem_ctrl.h                                                          47             37             26
+..\source\inc\databuffers\sensor_data_list.h                                              48             31             24
+..\source\inc\databuffers\sensor_node_list.h                                              47             34             19
+..\source\inc\alc_logger_arch.h                                                           42             32             19
+..\source\inc\databuffers\sensor_data_pool.h                                              49             43             18
+..\source\inc\net\data_upload_msg.h                                                       41             31             16
+..\source\src\uip_log.c                                                                   42             41             12
+..\source\inc\fw_version.h                                                                42             31             12
+..\source\inc\gps\gps_time_ctrl.h                                                         42             31             12
+..\source\inc\net\http_server.h                                                           42             31             12
+..\source\inc\databuffers\sensor_node_pool.h                                              41             31             11
+..\source\inc\net\data_upload_client.h                                                    42             36             10
+..\source\inc\modem\modem_drv_conf.h                                                      42             31             10
+..\source\inc\shell\16174prog03_shell_nodes.h                                             41             31             10
+..\source\inc\shell\16174prog03_shell_factory.h                                           41             31             10
+..\templates\blank_c_module.h                                                             40             33              9
+..\source\tests\all_tests_main.cpp                                                         2             17              5
+..\templates\blank_c_module.c                                                             43             39              1
+--------------------------------------------------------------------------------------------------------------------------
+SUM:                                                                                    3108           2612           5600
+--------------------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+C                               21           1682           1546           4101
+C++                              9            410            337           1014
+C/C++ Header                    22           1016            729            485
+-------------------------------------------------------------------------------
+SUM:                            52           3108           2612           5600
+-------------------------------------------------------------------------------

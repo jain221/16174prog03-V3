@@ -1,0 +1,60 @@
+Software Release Notes for 16174prog03 V1.0.0
+=============================================
+:Date:   1/03/2017
+:Author: Derek Russell <derek.russell@digitrol.com>
+
+::
+
+    Contract: 16174
+    GitTag: C16174PROG03-V1.0.0
+
+
+Overview
+--------
+
+The 16174prog03 is the firmware for the microcontroller on the ALC Gateway.
+
+
+Changes from previous version
+-----------------------------
+
+- This is the first release of the software.
+
+
+Tools
+-----
+
+Compiler, linker, libraries etc:
+
+- GCC ARM Compiler (V5.3.1 20160307)
+- Eclipse - IDE
+- Git - version control
+
+
+Source Control Management
+-------------------------
+
+All the project files are under source control management using Git.
+The repository is located at::
+
+    T:\repos\software\projects\16xxx\16174prog03.git
+
+
+Issue Tracking
+--------------
+
+Issues are tracked using issue tracker. The URL is http://engineering-2/mantis/
+
+
+User package
+------------
+
+A list of files and packages supplied to the customer::
+
+    01/03/2017  10:25            194,552 16174prog03-V1.0.0.bin
+
+Checksum: ``0x0133DF28``
+
+Released to customer - V1.0.0 on 01/03/2017
+
+    Release Authorized by: ________________________________

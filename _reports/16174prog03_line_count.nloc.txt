@@ -1,0 +1,61 @@
+----------------------------------------------------------------------
+Default Project                    Total      Code   Comment     Blank
+----------------------------------------------------------------------
+16174prog03.c                         75        50        11        10
+16174prog03_shell_factory.c          163        65        42        55
+16174prog03_shell_factory.h           82        10        31        41
+16174prog03_shell_nodes.c            174        71        43        59
+16174prog03_shell_nodes.h             82        10        31        41
+alc_logger_arch.h                     93        19        32        42
+alc_rtcc_arch_util_test.cpp           79        38        24        16
+all_tests_main.cpp                    24         5        15         2
+blank_c_module.c                      83         1        38        43
+blank_c_module.h                      82         9        33        40
+data_upload_client.c                 855       525       156       158
+data_upload_client.h                  88        10        34        42
+data_upload_client_conf.h            120        27        48        55
+data_upload_msg.c                    231       108        56        64
+data_upload_msg.h                     88        16        31        41
+data_upload_msg_test.cpp             131        56        32        42
+external_ble_interface.c             345       193        91        55
+fw_version.h                          85        12        31        42
+gps_data.c                           150        46        43        56
+gps_data.h                           107        29        35        47
+gps_time_ctrl.c                      425       250        95        81
+gps_time_ctrl.h                       85        12        31        42
+http_server.h                         85        12        31        42
+modem_ctrl.c                         591       390        78       122
+modem_ctrl.h                         110        26        40        47
+modem_drv.h                          164        66        33        65
+modem_drv_conf.h                      83        10        31        42
+modem_drv_sim808.c                  1344       933       153       256
+ntp_time_ctrl.c                      365       189        88        84
+nv_settings.c                        440       275        66        96
+nv_settings.h                        106        28        31        47
+project-conf.h                       137        36        44        62
+rpl_border_router.c                  238       111        56        66
+sensor_data.h                        100        27        37        42
+sensor_data_list.c                   442       262        85        94
+sensor_data_list.h                   103        24        34        48
+sensor_data_list__insert_te...       272       171        40        60
+sensor_data_list__max_pop_l...       183       111        35        36
+sensor_data_pool.c                   231        97        61        64
+sensor_data_pool.h                   110        18        40        49
+sensor_data_pool_test.cpp            203       127        28        47
+sensor_node.c                        405       221        81        85
+sensor_node.h                        137        54        49        51
+sensor_node_list.c                   374       203        77        83
+sensor_node_list.h                   100        19        34        47
+sensor_node_list_test.cpp            490       287        74       123
+sensor_node_pool.c                   132        40        41        50
+sensor_node_pool.h                    83        11        31        41
+sensor_node_pool_test.cpp            200       120        33        45
+sensor_node_test.cpp                 179        99        40        39
+server_time_ctrl.c                   171        59        52        59
+uip_log.c                             95        12        41        42
+-= TOTAL =-                        11320      5600      2547      3108
+
+----------------------------------------------------------------------
+Summary                            Total      Code   Comment     Blank
+----------------------------------------------------------------------
+Grand Total                        11320      5600      2547      3108

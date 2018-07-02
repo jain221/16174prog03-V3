@@ -1,0 +1,2 @@
+# This target will be used if none is defined on the make commandline
+TARGET=16174a03-gateway

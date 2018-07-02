@@ -1,0 +1,166 @@
+# @file  unit_test.mke
+# @brief Unit-Test Makefile for 16174prog03 project
+#
+# @note
+# Copyright (C) 2016, Digitrol Ltd, Swansea, Wales. All rights reserved.
+#
+# This makefile run the unit-tests with CppUTest test harness.
+#
+
+
+-include project_defs.mke
+-include unit_test_local_config.mke
+
+
+# Assume CPPUTEST_HOME is an environment variable and points to the CppUTest
+# library.
+ifndef CPPUTEST_HOME
+  ${error CPPUTEST_HOME not defined! You must specify where CppUTest resides}
+endif
+
+
+CONTIKI_DIR     = ../../contiki
+ALC_CONTIKI_DIR = ../../contiki-alc
+
+
+################################################################################
+
+# UNIT_TEST_SILENCE may be defined in unit_test_local_config.mke
+# Set it to @ to keep the makefile quiet
+SILENCE = $(UNIT_TEST_SILENCE)
+
+
+CPPUTEST_USE_GCOV = Y
+CPPUTEST_USE_VPATH = Y
+CPPUTEST_USE_EXTENSIONS = N
+CPPUTEST_USE_LONG_LONG = Y
+CPPUTEST_PEDANTIC_ERRORS = N
+
+
+#---- Outputs ----#
+COMPONENT_NAME = 16174prog03
+
+
+#--- Inputs ----#
+#CPP_PLATFORM     = mingw32-g++
+PROJECT_HOME_DIR = .
+
+
+################################################################################
+
+# Add individual files to the test
+SRC_FILES += \
+		src/net/data_upload_msg.c \
+		$(ALC_CONTIKI_DIR)/platform/16174a03-gateway/dev/eeprom_arch.c \
+		$(ALC_CONTIKI_DIR)/src/alc_circular_buffer_pointers.c \
+		$(ALC_CONTIKI_DIR)/src/alc_eat_string_tokens.c \
+		$(ALC_CONTIKI_DIR)/src/alc_ipaddr_snprintf.c \
+		$(ALC_CONTIKI_DIR)/src/alc_nmea_utils.c \
+		$(ALC_CONTIKI_DIR)/src/alc_store_string_utils.c \
+		$(ALC_CONTIKI_DIR)/src/alc_string.c \
+		$(ALC_CONTIKI_DIR)/src/alc_test_char_seq.c
+
+
+# Add all the files the following folders to the test
+SRC_DIRS += \
+		src/databuffers
+
+
+TEST_SRC_DIRS += \
+		tests \
+		tests/data_upload_msg \
+		tests/sensor_data_list \
+		tests/sensor_data_pool \
+		tests/sensor_node \
+		tests/sensor_node_list \
+		tests/sensor_node_pool \
+		$(ALC_CONTIKI_DIR)/platform/16174a03-gateway/tests/eeprom_arch \
+		$(ALC_CONTIKI_DIR)/tests/alc_circular_buffer_pointers \
+		$(ALC_CONTIKI_DIR)/tests/alc_eat_string_tokens \
+		$(ALC_CONTIKI_DIR)/tests/alc_ipaddr_snprintf \
+		$(ALC_CONTIKI_DIR)/tests/alc_nmea_utils \
+		$(ALC_CONTIKI_DIR)/tests/alc_store_string_utils \
+		$(ALC_CONTIKI_DIR)/tests/alc_test_char_seq
+
+
+MOCKS_SRC_DIRS += \
+		mocks \
+		$(ALC_CONTIKI_DIR)/mocks/alc_assert \
+		$(ALC_CONTIKI_DIR)/mocks/alc_logger \
+		$(ALC_CONTIKI_DIR)/mocks/contiki \
+		$(ALC_CONTIKI_DIR)/mocks/cpu \
+		$(ALC_CONTIKI_DIR)/mocks/external_ble_interface \
+		$(ALC_CONTIKI_DIR)/mocks/gps_data \
+		$(ALC_CONTIKI_DIR)/platform/16174a03-gateway/mocks/stm32_hal
+
+
+INCLUDE_DIRS += \
+		$(CPPUTEST_HOME)/include \
+		inc \
+		inc/databuffers \
+		inc/gps \
+		inc/net \
+		inc/storage \
+		$(CONTIKI_DIR) \
+		$(CONTIKI_DIR)/core \
+		$(CONTIKI_DIR)/core/net \
+		$(CONTIKI_DIR)/core/net/ip \
+		$(CONTIKI_DIR)/core/sys \
+		$(ALC_CONTIKI_DIR)/inc \
+		$(ALC_CONTIKI_DIR)/mocks/cmsis_rtos \
+		$(ALC_CONTIKI_DIR)/mocks/contiki \
+		$(ALC_CONTIKI_DIR)/platform/16174a03-gateway/dev \
+		$(ALC_CONTIKI_DIR)/platform/16174a03-gateway/Drivers/CMSIS/Device/ST/STM32F7xx/Include \
+		$(ALC_CONTIKI_DIR)/platform/16174a03-gateway/Drivers/CMSIS/Include \
+		$(ALC_CONTIKI_DIR)/platform/16174a03-gateway/Drivers/STM32_BlueNRG \
+		$(ALC_CONTIKI_DIR)/platform/16174a03-gateway/Drivers/STM32F7xx_HAL_Driver/Inc \
+		$(ALC_CONTIKI_DIR)/platform/16174a03-gateway/Inc \
+		$(ALC_CONTIKI_DIR)/third_party
+
+
+################################################################################
+#
+#	CPPUTEST_CXXFLAGS - flags for the C++ compiler
+#	CPPUTEST_CPPFLAGS - flags for the C++ AND C preprocessor
+#	CPPUTEST_CFLAGS - flags for the C complier
+#	CPPUTEST_LDFLAGS - Linker flags
+#
+
+CPPUTEST_CXXFLAGS += -std=c++11 -fsized-deallocation
+CPPUTEST_CFLAGS += -std=c99
+CPPUTEST_LDFLAGS += -lpthread -Wl,--allow-multiple-definition
+
+
+CPPUTEST_CPPFLAGS += -DUSE_FULL_LL_DRIVER
+CPPUTEST_CPPFLAGS += -DSTM32F767xx
+CPPUTEST_CPPFLAGS += -D__SOURCEFILE__=__FILE__
+CPPUTEST_CPPFLAGS += -DSENSOR_DATA_POOL_SIZE=10U
+CPPUTEST_CPPFLAGS += -DSENSOR_NODE_LIST_SIZE=10U
+CPPUTEST_CPPFLAGS += -DNETSTACK_CONF_WITH_IPV6
+#CPPUTEST_CPPFLAGS += -DPROJECT_CONF_H="\"project-conf.h\""
+
+#
+# Set compiler warnings
+#    CPPUTEST_WARNINGFLAGS     - for C and C++
+#    CPPUTEST_CXX_WARNINGFLAGS - for C++ only
+#    CPPUTEST_C_WARNINGFLAGS   - for C only
+#
+CPPUTEST_WARNINGFLAGS =  -Wall -Wextra -Wconversion -Wshadow -Wswitch-default -Wswitch-enum
+CPPUTEST_WARNINGFLAGS += -Werror=missing-prototypes
+CPPUTEST_WARNINGFLAGS += -Werror=implicit-function-declaration
+
+CPPUTEST_CXX_WARNINGFLAGS = -Woverloaded-virtual
+CPPUTEST_C_WARNINGFLAGS   = -Wstrict-prototypes
+
+
+# Set Linker flags
+LD_LIBRARIES = -L$(CPPUTEST_HOME)/lib -lCppUTest -lCppUTestExt
+
+
+STUFF_TO_CLEAN += *.bak
+
+
+rebuild: clean all
+
+# include CppUTest makefile
+include $(CPPUTEST_HOME)/build/MakefileWorker.mk
